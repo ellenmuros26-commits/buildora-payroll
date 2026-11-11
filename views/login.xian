@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BUILDORA | Sign In</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-[#e9e7e2] text-[#26343e] flex items-center justify-center p-5">
+  <main class="w-full max-w-5xl grid md:grid-cols-2 bg-[#f8f7f5] border border-[#d7d5cf] shadow-lg">
+    <section class="bg-[#26343e] text-white min-h-[420px] p-10 flex flex-col justify-between">
+      <div class="flex items-center gap-3">
+        <span class="w-3 h-9 bg-[#efb600] -skew-x-12"></span>
+        <h1 class="text-3xl font-extrabold">BUILDORA</h1>
+      </div>
+      <div>
+        <p class="text-[#efb600] text-xs uppercase tracking-widest font-bold">Unified Construction Management</p>
+        <h2 class="text-4xl font-extrabold mt-5 leading-tight">Manage finance.<br>Empower people.</h2>
+        <p class="mt-5 text-sm text-slate-300 leading-relaxed">Manage payroll, financial approvals, project spending and verified attendance in one connected workspace.</p>
+      </div>
+      <p class="text-xs text-slate-400">Payroll &amp; Finance Management • XianFire</p>
+    </section>
+    <section class="p-8 md:p-12 flex flex-col justify-center">
+      <h2 class="text-2xl font-bold">Sign in</h2>
+      <p class="text-sm text-slate-500 mt-2">Use your authorized BUILDORA account.</p>
+      <p id="loginError" role="alert" hidden class="mt-5 bg-red-50 border border-red-200 text-red-700 p-3 text-sm"></p>
+      <form method="POST" action="/auth/login" class="mt-7 space-y-5">
+        <label class="block text-sm font-semibold">Email Address
+          <input class="w-full mt-2 p-3 border border-[#d7d5cf] outline-none focus:border-[#efb600] bg-white" type="email" name="email" autocomplete="username" maxlength="255" required placeholder="name@buildora.local">
+        </label>
+        <label class="block text-sm font-semibold">Password
+          <input class="w-full mt-2 p-3 border border-[#d7d5cf] outline-none focus:border-[#efb600] bg-white" type="password" name="password" autocomplete="current-password" required placeholder="Enter your password">
+        </label>
+        <button type="submit" class="w-full p-3 bg-[#efb600] text-[#26343e] font-bold hover:bg-yellow-400">Sign In</button>
+      </form>
+      <p class="text-xs text-slate-500 mt-7">Accounts are created by the BUILDORA administrator. Public registration is disabled.</p>
+    </section>
+  </main>
+  <script>
+    const reason = new URLSearchParams(window.location.search).get("error");
+    if (reason) {
+      const box = document.getElementById("loginError");
+      box.hidden = false;
+      box.textContent = reason === "invalid" ? "Incorrect email or password." : "This account is not authorized for Payroll & Finance.";
+    }
+  </script>
+</body>
+</html>

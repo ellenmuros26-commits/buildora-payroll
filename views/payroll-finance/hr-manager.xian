@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BUILDORA | HR Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body
+  data-role="hr"
+  class="m-0 bg-[#e9e7e2] text-[#26343e] font-sans"
+>
+  <div id="app" class="min-h-screen">
+    <p class="p-8">Loading HR Manager dashboard...</p>
+  </div>
+  <script src="/payroll-finance/assets/ui.js?v=1" defer></script>
+</body>
+</html>
